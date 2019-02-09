@@ -5,30 +5,23 @@ import {
   TouchableOpacity,
   Text,
   View,
-} from 'react-native'
+  Image,
+  ImageBackground
+} from 'react-native';
 
 class TButton extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { count: 1000 }
-  }
-
   render() {
     return (
       <View style={styles.container}>
         <TouchableOpacity
           style={styles.button}
-          //Customizable button
           onPress={this.props.onPress}
         >
-          <Text>{this.props.text ? this.props.text : 'Touch Here'}</Text>
+          <Image style={styles.image}
+            source={require('./Monster_Images/TreeRat.png')}
+          />
+          <Text style={styles.text}> Tree Rat </Text>
         </TouchableOpacity>
-        <View style={[styles.countContainer]}>
-          <Text style={[styles.countText]}>
-            { this.state.count !== 0 ? this.state.count: null}
-          </Text>
-          <Text>xyz</Text>
-        </View>
       </View>
     )
   }
@@ -41,24 +34,21 @@ const styles = StyleSheet.create({
   },
   //Makes It Circular
   button: {
+    flexDirection: 'row',
     borderWidth:1,
     borderColor:'rgba(0,0,0,0.2)',
-    alignItems:'center',
-    justifyContent:'center',
-    width:100,
-    height:100,
-    backgroundColor:'#E0FFFF',
-    borderRadius:100,
+    height:60,
+    backgroundColor:'#EFF0F1',
   },
-  countContainer: {
-    alignItems: 'center',
-    padding: 10,
-    width: 100,
-    height: 100,
+  image: {
+    width:60,
+    height:59,
   },
-  countText: {
-    color: '#FF00FF'
+  text:{
+    paddingVertical:15,
+    paddingHorizontal:90,
+    fontSize:20,
   }
-})
+});
 
 export default TButton;

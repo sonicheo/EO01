@@ -10,13 +10,17 @@ import { StackNavigator } from 'react-navigation';
 import Settings from './Settings.js';
 import Home from './Home.js';
 
+import {
+  Tree_Rat}
+from './Monsters/Tree_Rat.js';
+
 const AppNavigator = createStackNavigator(
   {
     Home: {
       screen: Home
     },
-    Settings: {
-      screen: Settings
+    Tree_Rat: {
+      screen: Tree_Rat
     },
   },
   {
